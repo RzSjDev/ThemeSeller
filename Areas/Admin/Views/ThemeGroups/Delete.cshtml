@@ -1,0 +1,37 @@
+﻿@model DataLayer.ThemeGroup
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>آیا از حذف "@Model.GroupTitle" مطمئن هستید ؟</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageTitleGroup)
+        </dt>
+
+        <dd>
+            <img src="/GroupImage/@Model.ImageTitleGroup" class="thumbnail" style="max-width: 150px" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف گروه" class="btn btn-danger" />
+        </div>
+    }
+</div>
