@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DataLayer.ShowGroupViewModel>
+
+@*<section class="category-section border-radius">
+    <header><i class="fa fa-folder-open-o"></i> <h3> دسته بندی ها </h3></header>
+    <ul>
+
+        @foreach (var item in Model)
+        {
+            <li><a href="/Group/@item.GroupID/@item.GroupThemeTitle"> @item.GroupThemeTitle <span>@item.ThemeCount</span></a></li>
+        }
+
+    </ul>
+</section>*@
+
+
+<section>
+    <div class="container-fluid-lg">
+        <div class="title">
+            <h2>نمایش بر اساس گروه قالب‌ها</h2>
+            <span class="title-leaf">
+                <svg class="icon-width">
+                    <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
+                </svg>
+            </span>
+        </div>
+       <div class="row">
+            <div class="col-12">
+                <div class="slider-9">
+                    @foreach (var item in Model){
+                    <div>
+                        <a href="shop-left-sidebar.html" class="category-box wow fadeInUp">
+                            <div>
+                                <img src="/GroupImage/@item.ImageGroup" class="blur-up lazyload" alt="">
+                                <h5>@item.GroupThemeTitle</h5>
+                            </div>
+                        </a>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</section>
